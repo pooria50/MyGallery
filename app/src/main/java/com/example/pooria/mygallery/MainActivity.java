@@ -20,8 +20,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, MainSendPostActivity.class);
         startActivity(intent);
         Toast.makeText(this, "Chekced", Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, "Chekced", Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, "Chekced", Toast.LENGTH_SHORT).show();
 
         //test
 
