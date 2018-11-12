@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/siasi"
+         app:showAsAction="always"
+         android:title="سیاسی" />
+    <item android:id="@+id/varzeshi"
+        app:showAsAction="always"
+        android:title="ورزشی" />
+    <item android:id="@+id/tarikhi"
+        app:showAsAction="always"
+        android:title="تاریخی" />
+    <item android:id="@+id/farhangi"
+        app:showAsAction="always"
+        android:title="فرهنگی" />
+    <item android:id="@+id/elmi"
+        app:showAsAction="always"
+        android:title="علمی" />
+
+</menu>

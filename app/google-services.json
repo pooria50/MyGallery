@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "452937780185",
+    "firebase_url": "https://mygallery-4fdda.firebaseio.com",
+    "project_id": "mygallery-4fdda",
+    "storage_bucket": "mygallery-4fdda.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:452937780185:android:a4fcaf05835cf57e",
+        "android_client_info": {
+          "package_name": "com.example.pooria.mygallery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "452937780185-r6ek8umbllls2osfc900cehbod3m024m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-PfxV1LorwkoEkhz40SHlQG7tcgsoePY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

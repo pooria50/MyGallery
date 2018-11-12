@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    android:background="@android:color/white"
+    tools:context=".MainSendPostActivity">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_centerVertical="true"
+        android:layout_margin="5dp"
+        android:padding="5dp"
+        android:layout_gravity="center"
+        android:fitsSystemWindows="true"
+        android:layout_marginTop="5dp"
+        android:id="@+id/img_main_send_post"
+        />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@color/a"
+        android:layout_height="30dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:textSize="10dp"
+            android:textAlignment="center"
+            android:id="@+id/main_edittext_caption"
+            android:hint="Caption"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_margin="5dp"
+        android:background="#AFC3F2"
+        android:layout_height="30dp">
+
+        <TextView
+            android:layout_width="60dp"
+            android:text="Dastresi"
+            android:layout_marginTop="2dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="15dp"
+            android:layout_height="20dp" />
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:textAlignment="center"
+            android:id="@+id/spinnerr"
+            android:layout_marginTop="3dp"
+            android:layout_height="wrap_content">
+        </Spinner>
+
+    </LinearLayout>-->
+
+
+
+
+    <DatePicker
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:id="@+id/dataPicker"
+        android:layout_margin="10dp"
+        android:textAlignment="center"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp">
+    </DatePicker>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
+        android:background="#AFC3F2"
+        android:layout_height="30dp">
+
+        <TextView
+            android:layout_width="70dp"
+            android:textSize="10dp"
+            android:textStyle="italic|bold"
+            android:textAlignment="center"
+            android:id="@+id/main_textview_min"
+            android:hint="Minimum"
+            android:layout_height="20dp" />
+
+        <EditText
+            android:layout_width="70dp"
+            android:textSize="10dp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:inputType="number"
+            android:id="@+id/main_edittext_min"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:layout_width="70dp"
+            android:textSize="10dp"
+            android:layout_marginLeft="10dp"
+            android:textStyle="italic|bold"
+            android:textAlignment="center"
+            android:id="@+id/main_textview_max"
+            android:hint="Maximum"
+            android:layout_height="20dp" />
+
+        <EditText
+            android:layout_width="70dp"
+            android:textSize="10dp"
+            android:textStyle="bold"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:id="@+id/main_edittext_max"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_margin="5dp"
+        android:background="#AFC3F2"
+        android:layout_height="30dp">
+
+
+        <TextView
+            android:layout_width="70dp"
+            android:textSize="10dp"
+            android:textStyle="italic|bold"
+            android:layout_marginTop="5dp"
+            android:textAlignment="center"
+            android:text="Dasteha"
+            android:layout_height="20dp" />
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:textAlignment="center"
+            android:id="@+id/spinner"
+            android:layout_height="wrap_content">
+        </Spinner>
+    </LinearLayout>
+
+   <!-- <DatePicker
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:id="@+id/dataPicker"
+        android:layout_margin="10dp"
+        android:textAlignment="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </DatePicker>-->
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_margin="5dp"
+        android:background="#AFC3F2"
+        android:layout_height="30dp">
+
+        <TextView
+            android:layout_width="70dp"
+            android:textSize="10dp"
+            android:textStyle="italic|bold"
+            android:textAlignment="center"
+            android:text="Hazine"
+            android:layout_height="20dp" />
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:textSize="10dp"
+            android:textStyle="bold"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:id="@+id/main_edittext_hazine"
+            android:hint="بر اساس تومان میباشد "
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/main_btn_saveDates"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:text="Save"
+        android:textAlignment="center"
+        android:textSize="10dp"
+        android:textStyle="bold|italic" />
+
+
+</LinearLayout>
