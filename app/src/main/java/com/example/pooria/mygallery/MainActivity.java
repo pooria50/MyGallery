@@ -19,6 +19,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, MainSendPostActivity.class);
         startActivity(intent);
         Toast.makeText(this, "OnClickeddddd", Toast.LENGTH_SHORT).show();
-
+        //test
     }
 }
