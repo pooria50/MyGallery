@@ -2,9 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context=".RegisterCourseFragment">
+    tools:context=".Fragment.RegisterCourseFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
@@ -19,16 +19,16 @@
 
 
     <EditText
-        android:layout_width="50dp"
+        android:layout_width="match_parent"
         android:id="@+id/edt_name"
         android:textSize="20dp"
-        android:hint="UserName"
+        android:hint="Name"
         android:paddingTop="20dp"
         android:layout_height="wrap_content" />
 
 
     <EditText
-        android:layout_width="50dp"
+        android:layout_width="match_parent"
         android:id="@+id/edt_user_name"
         android:textSize="20dp"
         android:hint="UserName"
@@ -37,20 +37,21 @@
 
 
     <EditText
-        android:layout_width="50dp"
+        android:layout_width="match_parent"
         android:id="@+id/edt_user_password"
         android:textSize="20dp"
-        android:hint="UserName"
+        android:hint="UserPassword"
         android:paddingTop="20dp"
         android:layout_height="wrap_content" />
 
 
 
     <Button
-        android:layout_width="20dp"
+        android:layout_width="match_parent"
         android:id="@+id/btn_Login"
         android:textSize="15dp"
         android:textStyle="bold"
+        android:layout_marginTop="20dp"
         android:text="Register"
         android:layout_height="wrap_content" />
 

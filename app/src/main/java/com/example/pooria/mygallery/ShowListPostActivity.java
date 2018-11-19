@@ -90,7 +90,6 @@ public class ShowListPostActivity extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
-
     }
 
     public void getPostsByFarhanqi() {

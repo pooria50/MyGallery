@@ -12,14 +12,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ShowListMainPostsActivity">
+        <activity android:name=".TestActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainSendPostActivity" />
+        <activity android:name=".ShowListMainPostsActivity" />
 
         <service android:name=".Utils.FcmMessagingService">
             <intent-filter>
@@ -27,13 +27,13 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainSendPostActivity" />
         <activity android:name=".SendPostActivity" />
         <activity
             android:name=".ShowListPostActivity"
             android:label="@string/title_activity_show_list_post"
             android:theme="@style/AppTheme" />
-        <activity android:name=".TestActivity"></activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

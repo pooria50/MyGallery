@@ -35,7 +35,7 @@ public class SendPostActivity extends AppCompatActivity {
     private Bitmap bitmap;
     private static final int IMG_REQUEST = 777;
     private MyGalleryAPI mService;
-    private String id,daste;
+    private String id,daste,user_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +44,11 @@ public class SendPostActivity extends AppCompatActivity {
         intent = getIntent();
         id = intent.getStringExtra("id");
         daste = intent.getStringExtra("daste");
+        user_id = intent.getStringExtra("user_id");
+        Log.d("user_id", String.valueOf(user_id));
         Log.d("intermediate", id.toString());
         Log.d("intermediate", daste.toString());
+        //Log.d("intermediate", user_id.toString());
         getControls();
 
         btn_send.setOnClickListener(new View.OnClickListener() {

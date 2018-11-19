@@ -1,4 +1,4 @@
-package com.example.pooria.mygallery;
+package com.example.pooria.mygallery.Fragment;
 
 
 import android.os.Bundle;
@@ -10,7 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.pooria.mygallery.Model.User;
+import com.example.pooria.mygallery.R;
 import com.example.pooria.mygallery.Retrofit.MyGalleryAPI;
+import com.example.pooria.mygallery.TestActivity;
 import com.example.pooria.mygallery.Utils.Common;
 
 import retrofit2.Call;
@@ -24,7 +26,7 @@ import retrofit2.Response;
 public class RegisterCourseFragment extends Fragment {
     private EditText edt_name,edt_user_name, edt_user_password;
     private Button btn_Login;
-    private MyGalleryAPI mService;
+    public static MyGalleryAPI mService;
     public RegisterCourseFragment() {
         // Required empty public constructor
     }
@@ -54,19 +56,19 @@ public class RegisterCourseFragment extends Fragment {
         String name = edt_name.getText().toString();
         String user_name = edt_user_name.getText().toString();
         String user_password = edt_user_password.getText().toString();
-        mService = Common.getAPI();
-        mService.performRegistration(name,user_name,user_password).enqueue(new Callback<User>() {
+        Call<User> call = TestActivity.mService.performRegistration(name, user_name, user_password);
+        call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
-
                 if (response.body().getResponse().equals("ok")) {
                     TestActivity.prefConfig.displayToast("Compeleted : ) ");
-                } else if (response.body().getResponse().equals("exist")) {
+                }
+                else if (response.body().getResponse().equals("exist")) {
                     TestActivity.prefConfig.displayToast("User Existed, Im Sorry :( ");
-                } else if (response.body().getResponse().equals("error")) {
+                }
+                else if (response.body().getResponse().equals("error")) {
                     TestActivity.prefConfig.displayToast("Something wrong !, Im Sorry :( ");
                 }
-
             }
 
             @Override
@@ -74,6 +76,7 @@ public class RegisterCourseFragment extends Fragment {
 
             }
         });
+
     }
 
 }

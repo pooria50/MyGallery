@@ -1,4 +1,4 @@
-package com.example.pooria.mygallery;
+package com.example.pooria.mygallery.Fragment;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -15,6 +15,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.DatePicker;
 import android.widget.Toast;
+
+import com.example.pooria.mygallery.MainSendPostActivity;
+import com.example.pooria.mygallery.R;
 
 import java.util.Calendar;
 

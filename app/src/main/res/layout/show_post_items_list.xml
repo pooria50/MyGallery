@@ -5,8 +5,7 @@
     cardCornerRadius="8dp"
     contentPadding="5dp"
     android:layout_marginTop="15dp"
-    cardMaxElevation="8dp"
-    cardBackgroundColor="@android:color/white"
+    cardMaxElevation="10dp"
     cardUseCompatPadding="true"
     android:layout_height="wrap_content">
 

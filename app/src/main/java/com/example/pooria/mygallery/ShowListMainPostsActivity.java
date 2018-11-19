@@ -34,11 +34,20 @@ public class ShowListMainPostsActivity extends AppCompatActivity {
     private MyGalleryAPI mService;
     private List<ReadMainPostsModel> list = new ArrayList<>();
     private MainPostsAdapter adapter;
+    private String user_id;
+    private Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_list_main_posts);
         getControls();
+
+
+        intent = getIntent();
+        user_id = intent.getStringExtra("key");
+        Log.d("user_id",  String.valueOf(user_id));
+
+
         mService = Common.getAPI();
 
 

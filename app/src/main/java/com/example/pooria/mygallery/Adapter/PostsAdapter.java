@@ -54,11 +54,8 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostAdapterV
             @Override
             public void onClick(View v) {
                 Log.d("informs", "id "+String.valueOf(list.get(i).getId()));
-
             }
         });
-
-
         holder.img_like.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,20 +66,15 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostAdapterV
                     @Override
                     public void onResponse(Call<User_Post_Likes> call, Response<User_Post_Likes> response) {
                         response.toString();
-                        Toast.makeText(context, "Inserted", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(context, "Inserted", Toast.LENGTH_SHORT).show();
                     }
-
                     @Override
                     public void onFailure(Call<User_Post_Likes> call, Throwable t) {
                         Log.d("informs", t.toString());
-
                     }
                 });
-
             }
         });
-
-
 
         holder.img_comment.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,10 +86,8 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostAdapterV
                     @Override
                     public void onResponse(Call<User_Post_Comments> call, Response<User_Post_Comments> response) {
                         response.toString();
-                        Toast.makeText(context, "Inserted", Toast.LENGTH_SHORT).show();
-
+                        //Toast.makeText(context, "Inserted", Toast.LENGTH_SHORT).show();
                     }
-
                     @Override
                     public void onFailure(Call<User_Post_Comments> call, Throwable t) {
                         Log.d("informs", t.toString());

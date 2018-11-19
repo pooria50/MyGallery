@@ -20,13 +20,13 @@ import retrofit2.http.Query;
 public interface MyGalleryAPI {
 
 
-    @GET("register.php")
+    @POST("User_Posts/User_Informations/register.php")
     Call<User> performRegistration(@Query("name") String Name,
                                    @Query("user_name") String UserName,
                                    @Query("user_password") String UserPassword);
 
 
-    @GET("login.php")
+    @GET("User_Posts/User_Informations/login.php")
     Call<User> performUserLogin(@Query("user_name") String UserName,
                                 @Query("user_password") String UserPassword);
 
@@ -53,7 +53,7 @@ public interface MyGalleryAPI {
     @FormUrlEncoded
     @POST("User_Posts/SaveLikes.php")
     Call<User_Post_Likes> sendLike(@Field("post_id") Integer post_id,
-                                   @Field("like") Integer like);
+                                   @Field("likes") Integer likes);
 
 
     @FormUrlEncoded

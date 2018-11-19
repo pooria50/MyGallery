@@ -1,7 +1,7 @@
 package com.example.pooria.mygallery.Model;
 
 public class User_Post_Likes {
-    private Integer id,post_id, like ;
+    private Integer id,post_id, likes ;
 
     public Integer getId() {
         return id;
@@ -20,11 +20,11 @@ public class User_Post_Likes {
     }
 
     public Integer getLike() {
-        return like;
+        return likes;
     }
 
     public void setLike(Integer like) {
-        this.like = like;
+        this.likes = like;
     }
 
 }

@@ -18,7 +18,7 @@ public class PrefConfig {
 
     public void writeLoginStatus(boolean status) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putBoolean(context.getString(R.string.pref_login_status), status);
+        editor.putBoolean(context.getString(R.string.pref_login_status),status);
         editor.commit();
     }
 
@@ -33,8 +33,8 @@ public class PrefConfig {
         editor.commit();
     }
 
-    public boolean readName() {
-        return Boolean.parseBoolean(sharedPreferences.getString(context.getString(R.string.pref_user_name), "User"));
+    public String readName() {
+        return sharedPreferences.getString(context.getString(R.string.pref_user_name),"User");
     }
 
     public void displayToast(String message) {

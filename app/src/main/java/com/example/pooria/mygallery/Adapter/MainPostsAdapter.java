@@ -34,6 +34,7 @@ public class MainPostsAdapter extends RecyclerView.Adapter<MainPostsAdapter.Main
     @Override
     public MainPostsAdapter.MainPostsAdapterHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(context).inflate(R.layout.activity_show_main_pos_itemst, null);
+
         return new MainPostsAdapterHolder(view);
     }
 
@@ -52,7 +53,6 @@ public class MainPostsAdapter extends RecyclerView.Adapter<MainPostsAdapter.Main
         Log.d("inform", list.get(i).getDaste());
 
 
-
         holder.img_post.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,6 +64,7 @@ public class MainPostsAdapter extends RecyclerView.Adapter<MainPostsAdapter.Main
                 intent.putExtra("daste",daste);
                 context.startActivity(intent);
                 Log.d("inform", "id: "+id);
+                Log.d("inform", "daste: "+daste);
 
 
             }
@@ -91,6 +92,7 @@ public class MainPostsAdapter extends RecyclerView.Adapter<MainPostsAdapter.Main
             txt_price = itemView.findViewById(R.id.txt_price);
             txt_minimum = itemView.findViewById(R.id.txt_minimum);
             txt_maximum = itemView.findViewById(R.id.txt_maximum);
+
         }
     }
 }
