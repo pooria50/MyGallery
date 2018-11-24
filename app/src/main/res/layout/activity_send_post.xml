@@ -9,6 +9,14 @@
     android:layout_margin="2dp"
     tools:context=".SendPostActivity">
 
+
+    <FrameLayout
+        android:id="@+id/framelayout_bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/common_google_play_services_enable_text" />
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_marginTop="20dp"
@@ -104,26 +112,6 @@
             android:textAlignment="center"
             android:textSize="14dp"
             android:textStyle="bold" />
-
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_marginTop="15dp"
-        android:layout_height="wrap_content">
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:textStyle="bold"
-            android:textSize="15dp"
-            android:layout_margin="5dp"
-            android:text="هر کاربر فقط 1 عکس میتواند به اشتراک بگذارد ."
-            android:textAlignment="center"
-            android:layout_marginTop="2dp"
-            android:background="@android:color/holo_red_light"
-            android:layout_height="wrap_content" />
-
 
     </LinearLayout>
 

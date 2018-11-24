@@ -20,15 +20,15 @@ import retrofit2.http.Query;
 public interface MyGalleryAPI {
 
 
-    @POST("User_Posts/User_Informations/register.php")
+    /*@POST("User_Posts/User_Informations/register.php")
     Call<User> performRegistration(@Query("name") String Name,
                                    @Query("user_name") String UserName,
-                                   @Query("user_password") String UserPassword);
+                                   @Query("user_password") String UserPassword);*/
 
 
-    @GET("User_Posts/User_Informations/login.php")
+    /*@GET("User_Posts/User_Informations/login.php")
     Call<User> performUserLogin(@Query("user_name") String UserName,
-                                @Query("user_password") String UserPassword);
+                                @Query("user_password") String UserPassword);*/
 
 
 

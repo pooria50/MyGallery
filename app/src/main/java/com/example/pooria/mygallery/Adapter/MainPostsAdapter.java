@@ -10,8 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import com.example.pooria.mygallery.Model.ReadMainPostsModel;
 import com.example.pooria.mygallery.R;
 import com.example.pooria.mygallery.SendPostActivity;
@@ -19,6 +17,7 @@ import com.example.pooria.mygallery.Utils.Common;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
+
 
 public class MainPostsAdapter extends RecyclerView.Adapter<MainPostsAdapter.MainPostsAdapterHolder> {
 
@@ -34,7 +33,6 @@ public class MainPostsAdapter extends RecyclerView.Adapter<MainPostsAdapter.Main
     @Override
     public MainPostsAdapter.MainPostsAdapterHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(context).inflate(R.layout.activity_show_main_pos_itemst, null);
-
         return new MainPostsAdapterHolder(view);
     }
 

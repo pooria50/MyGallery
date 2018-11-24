@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    android:background="@android:color/darker_gray"
+    tools:context=".AlertDialogPostsActivity">
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:textColor="@android:color/holo_red_light"
+        android:text="نکات ضروری "
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:textSize="15dp"
+        android:layout_gravity="right"
+        android:layout_margin="5dp"
+        android:fontFamily="@string/common_google_play_services_updating_text"
+        android:text="هر کاربر تنها یک عکس میتواند برای گالری انتخاب کرده ودر مسابقه شرکت کند . "
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
+
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:textSize="15dp"
+        android:layout_margin="5dp"
+        android:layout_gravity="right"
+        android:fontFamily="@string/common_google_play_services_updating_text"
+        android:text="از شرکت کنندگان عزیز درخواست میشود در اسرع وقت تصفیه نمایند ."
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:textSize="15dp"
+        android:layout_gravity="right"
+        android:layout_margin="5dp"
+        android:fontFamily="@string/common_google_play_services_updating_text"
+        android:text="آدرس گالری متعقبا اعلام خواهد شد ."
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:textSize="15dp"
+        android:layout_gravity="right"
+        android:layout_margin="5dp"
+        android:fontFamily="@string/common_google_play_services_updating_text"
+        android:text="مقدار جوایز قابل تغییر است  ."
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:layout_margin="5dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button_close"
+            style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="CLOSE" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

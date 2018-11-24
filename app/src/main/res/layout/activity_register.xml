@@ -1,56 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="wrap_content"
-    tools:context=".Fragment.LoginCourseFragment">
+    tools:context=".RegisterActivity">
 
-    <!-- TODO: Update blank fragment layout -->
+
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textSize="30dp"
+        android:textSize="40dp"
         android:textAlignment="center"
         android:paddingTop="30dp"
         android:textStyle="italic|bold"
-        android:text="Login" />
-    
+        android:text="Register Form" />
+
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/edt_name"
+        android:textSize="20dp"
+        android:hint="Name"
+        android:gravity="center"
+        android:paddingTop="20dp"
+        android:layout_height="wrap_content" />
+
+
     <EditText
         android:layout_width="match_parent"
         android:id="@+id/edt_user_name"
         android:textSize="20dp"
         android:hint="UserName"
         android:paddingTop="20dp"
+        android:gravity="center"
         android:layout_height="wrap_content" />
+
 
     <EditText
         android:layout_width="match_parent"
         android:id="@+id/edt_user_password"
         android:textSize="20dp"
-        android:hint="Password"
+        android:hint="UserPassword"
+        android:gravity="center"
         android:paddingTop="20dp"
         android:layout_height="wrap_content" />
 
 
+
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="100dp"
         android:id="@+id/btn_Login"
         android:textSize="15dp"
-        android:text="Login"
-        android:layout_marginTop="20dp"
         android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="Register"
         android:layout_height="wrap_content" />
-
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textSize="13dp"
-        android:textAlignment="center"
-        android:paddingTop="30dp"
-        android:id="@+id/Regtext"
-        android:textStyle="italic|bold"
-        android:text="Registering ..." />
 
 </LinearLayout>

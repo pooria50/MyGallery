@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
+import android.support.design.widget.BottomSheetDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.pooria.mygallery.Model.SendPostsModel;
 import com.example.pooria.mygallery.Retrofit.MyGalleryAPI;
@@ -30,7 +32,7 @@ public class SendPostActivity extends AppCompatActivity {
     private Button btn_send,btn_show_Posts;
     private EditText edt_caption;
     private ImageView img_post;
-
+    private BottomSheetDialog mBottomSheetDialog;
     private Intent intent;
     private Bitmap bitmap;
     private static final int IMG_REQUEST = 777;
@@ -45,16 +47,40 @@ public class SendPostActivity extends AppCompatActivity {
         id = intent.getStringExtra("id");
         daste = intent.getStringExtra("daste");
         user_id = intent.getStringExtra("user_id");
+
         Log.d("user_id", String.valueOf(user_id));
         Log.d("intermediate", id.toString());
         Log.d("intermediate", daste.toString());
         //Log.d("intermediate", user_id.toString());
         getControls();
 
+
+        //View bottomSheet = findViewById(R.id.framelayout_bottom_sheet);
+        final View bottomSheetLayout = getLayoutInflater().inflate(R.layout.activity_alert_dialog_posts, null);
+        (bottomSheetLayout.findViewById(R.id.button_close)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mBottomSheetDialog.dismiss();
+            }
+        });
+
+        mBottomSheetDialog = new BottomSheetDialog(this);
+        mBottomSheetDialog.setContentView(bottomSheetLayout);
+        mBottomSheetDialog.show();
+
+
+
+
+
+
+
+
+
         btn_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sendPosts();
+                Toast.makeText(SendPostActivity.this, "Post Insert Compeleted", Toast.LENGTH_SHORT).show();
             }
         });
 
