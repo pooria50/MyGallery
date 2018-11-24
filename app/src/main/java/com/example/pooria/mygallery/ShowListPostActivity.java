@@ -44,6 +44,8 @@ public class ShowListPostActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getControls();
+
+
         mService = Common.getAPI();
 
 

@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.pooria.mygallery.Adapter.MainPostsAdapter;
 import com.example.pooria.mygallery.Model.Main_Posts_Model;
@@ -15,6 +16,7 @@ import com.example.pooria.mygallery.Model.ReadMainPostsModel;
 import com.example.pooria.mygallery.Retrofit.MyGalleryAPI;
 import com.example.pooria.mygallery.Utils.Common;
 
+import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,8 +36,11 @@ public class ShowListMainPostsActivity extends AppCompatActivity {
     private MyGalleryAPI mService;
     private List<ReadMainPostsModel> list = new ArrayList<>();
     private MainPostsAdapter adapter;
-    private String user_id;
+    public String user_id;
     private Intent intent;
+
+    public static Integer user_idInteger = 10;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,9 +48,11 @@ public class ShowListMainPostsActivity extends AppCompatActivity {
         getControls();
 
 
+
+
         intent = getIntent();
-        user_id = intent.getStringExtra("key");
-        Log.d("user_id",  String.valueOf(user_id));
+        this.user_id = intent.getStringExtra("key");
+        Log.d("user_id",  String.valueOf(this.user_id));
 
 
         mService = Common.getAPI();

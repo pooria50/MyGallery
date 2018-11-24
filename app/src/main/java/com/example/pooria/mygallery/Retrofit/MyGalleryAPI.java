@@ -19,16 +19,18 @@ import retrofit2.http.Query;
 
 public interface MyGalleryAPI {
 
+    @FormUrlEncoded
+    @POST("User_Posts/User_Informations/register.php")
+    Call<User> performRegistration(@Field("name") String Name,
+                                   @Field("user_name") String UserName,
+                                   @Field("user_password") String UserPassword,
+                                   @Field("user_email") String UserEmail);
 
-    /*@POST("User_Posts/User_Informations/register.php")
-    Call<User> performRegistration(@Query("name") String Name,
-                                   @Query("user_name") String UserName,
-                                   @Query("user_password") String UserPassword);*/
 
-
-    /*@GET("User_Posts/User_Informations/login.php")
-    Call<User> performUserLogin(@Query("user_name") String UserName,
-                                @Query("user_password") String UserPassword);*/
+    @FormUrlEncoded
+    @POST("User_Posts/User_Informations/login.php")
+    Call<User> performUserLogin(@Field("user_name") String UserName,
+                                @Field("user_password") String UserPassword);
 
 
 
@@ -67,7 +69,8 @@ public interface MyGalleryAPI {
     Call<SendPostsModel> sendPosts(@Field("img_url") String img_url,
                                    @Field("caption") String caption,
                                    @Field("post_id") Integer post_id,
-                                   @Field("post_daste") String post_daste);
+                                   @Field("post_daste") String post_daste,
+                                   @Field("user_id")Integer user_id);
 
 
    @GET("User_Posts/ShowListOfPostsByFarhangi.php")

@@ -4,13 +4,6 @@ public class SendPostsModel {
     private String img_url,caption, post_daste;
     private Integer post_id,id,user_id;
 
-    public Integer getUser_id() {
-        return user_id;
-    }
-
-    public void setUser_id(Integer user_id) {
-        this.user_id = user_id;
-    }
 
     public Integer getId() {
         return id;
@@ -50,5 +43,13 @@ public class SendPostsModel {
 
     public void setPost_id(Integer post_id) {
         this.post_id = post_id;
+    }
+
+    public Integer getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(Integer user_id) {
+        this.user_id = user_id;
     }
 }

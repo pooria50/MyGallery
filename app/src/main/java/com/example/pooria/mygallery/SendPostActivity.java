@@ -38,7 +38,7 @@ public class SendPostActivity extends AppCompatActivity {
     private static final int IMG_REQUEST = 777;
     private MyGalleryAPI mService;
     private String id,daste,user_id;
-
+    private String user_idd ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +54,8 @@ public class SendPostActivity extends AppCompatActivity {
         //Log.d("intermediate", user_id.toString());
         getControls();
 
+        user_idd = LoginActivity.UserId.toString();
+
 
         //View bottomSheet = findViewById(R.id.framelayout_bottom_sheet);
         final View bottomSheetLayout = getLayoutInflater().inflate(R.layout.activity_alert_dialog_posts, null);
@@ -68,19 +70,10 @@ public class SendPostActivity extends AppCompatActivity {
         mBottomSheetDialog.setContentView(bottomSheetLayout);
         mBottomSheetDialog.show();
 
-
-
-
-
-
-
-
-
         btn_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sendPosts();
-                Toast.makeText(SendPostActivity.this, "Post Insert Compeleted", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -106,11 +99,12 @@ public class SendPostActivity extends AppCompatActivity {
         String link = imageToString();
         mService = Common.getAPI();
         mService.sendPosts(link,edt_caption.getText().toString(),
-                Integer.valueOf(id),daste).enqueue(new Callback<SendPostsModel>() {
+                Integer.valueOf(id),daste, Integer.valueOf(user_idd)).enqueue(new Callback<SendPostsModel>() {
             @Override
             public void onResponse(Call<SendPostsModel> call, Response<SendPostsModel> response) {
                 response.toString();
                 Log.d("retro", response.toString());
+                Toast.makeText(SendPostActivity.this, "Post Insert Compeleted", Toast.LENGTH_SHORT).show();
 
             }
 
