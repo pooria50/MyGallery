@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.pooria.mygallery.Model.User;
 import com.example.pooria.mygallery.Retrofit.MyGalleryAPI;
@@ -47,6 +48,7 @@ public class RegisterActivity extends AppCompatActivity {
             public void onResponse(Call<User> call, Response<User> response) {
                 User body = response.body();
                 Log.d("activity", body.toString());
+                Toast.makeText(RegisterActivity.this, "Register Compeleted :) ", Toast.LENGTH_SHORT).show();
             }
 
             @Override

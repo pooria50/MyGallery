@@ -1,6 +1,5 @@
 package com.example.pooria.mygallery.Model;
 
-import com.google.gson.annotations.SerializedName;
 
 public class User {
 

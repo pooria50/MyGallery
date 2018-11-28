@@ -24,7 +24,6 @@ public class LoginActivity extends AppCompatActivity {
     private MyGalleryAPI mService;
     private Button btn_Login;
     public static Integer UserId ;
-    private String id ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,8 +34,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sendreQuest();
-                Intent intent = new Intent(LoginActivity.this, ShowListMainPostsActivity.class);
-                startActivity(intent);
+
             }
         });
 
@@ -58,14 +56,9 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 User body = response.body();
-                //Log.d("activity : ", body.toString());
-                Log.d("activity : ", "id Of User is : " + String.valueOf(body.getId()));
-               // Log.d("activity : ", body.getUser_password());
-               // Log.d("activity : ", body.getUser_email());
-                UserId = body.getId();
-                Log.d("activity : ", String.valueOf(UserId));
-
-
+                Log.d("etelaaat", body.getId().toString());
+                Intent intent = new Intent(LoginActivity.this, ShowListMainPostsActivity.class);
+                startActivity(intent);
             }
 
             @Override

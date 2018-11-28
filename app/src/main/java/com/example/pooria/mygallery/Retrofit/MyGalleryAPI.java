@@ -15,7 +15,6 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
-import retrofit2.http.Query;
 
 public interface MyGalleryAPI {
 
@@ -69,8 +68,8 @@ public interface MyGalleryAPI {
     Call<SendPostsModel> sendPosts(@Field("img_url") String img_url,
                                    @Field("caption") String caption,
                                    @Field("post_id") Integer post_id,
-                                   @Field("post_daste") String post_daste,
-                                   @Field("user_id")Integer user_id);
+                                   @Field("post_daste") String post_daste);
+
 
 
    @GET("User_Posts/ShowListOfPostsByFarhangi.php")

@@ -17,6 +17,14 @@
         android:layout_height="wrap_content"
         app:layout_behavior="@string/common_google_play_services_enable_text" />
 
+    <FrameLayout
+        android:id="@+id/framelayout_bottom_sheet2"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/common_google_play_services_enable_text" />
+
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_marginTop="20dp"
