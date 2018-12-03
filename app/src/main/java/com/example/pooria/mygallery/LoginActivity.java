@@ -34,7 +34,6 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sendreQuest();
-
             }
         });
 
@@ -50,20 +49,27 @@ public class LoginActivity extends AppCompatActivity {
 
     private void sendreQuest() {
         mService = Common.getAPI();
-        String user_name = edt_user_name.getText().toString();
-        String user_password = edt_user_password.getText().toString();
-        mService.performUserLogin(user_name,user_password).enqueue(new Callback<User>() {
+        mService.performUserLogin(edt_user_name.getText().toString(), edt_user_password.getText().toString()).enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
-                User body = response.body();
-                Log.d("etelaaat", body.getId().toString());
-                Intent intent = new Intent(LoginActivity.this, ShowListMainPostsActivity.class);
-                startActivity(intent);
+                if (response.body().getResponse().equals("ok")) {
+                    UserId = response.body().getId();
+                    Log.d("tags", String.valueOf(UserId));
+                    Toast.makeText(LoginActivity.this, "Login Ook", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(LoginActivity.this, ShowListMainPostsActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("user_id", String.valueOf(UserId));
+                    intent.putExtra("person", bundle);
+                    startActivity(intent);
+                } else if (response.body().getResponse().equals("failed")) {
+                    Log.d("tags", "Error : (( ");
+                    Toast.makeText(LoginActivity.this, "Username Or Password Is Wrong !", Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override
             public void onFailure(Call<User> call, Throwable t) {
-                Log.d("error", t.toString());
+
             }
         });
     }

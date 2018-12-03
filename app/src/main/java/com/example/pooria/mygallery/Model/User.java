@@ -4,7 +4,15 @@ package com.example.pooria.mygallery.Model;
 public class User {
 
     private Integer id;
-    private String name,user_name,user_email, user_password;
+    private String name,user_name,user_email, user_password, response;
+
+    public String getResponse() {
+        return response;
+    }
+
+    public void setResponse(String response) {
+        this.response = response;
+    }
 
     public Integer getId() {
         return id;

@@ -15,6 +15,7 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 public interface MyGalleryAPI {
 
@@ -26,10 +27,9 @@ public interface MyGalleryAPI {
                                    @Field("user_email") String UserEmail);
 
 
-    @FormUrlEncoded
-    @POST("User_Posts/User_Informations/login.php")
-    Call<User> performUserLogin(@Field("user_name") String UserName,
-                                @Field("user_password") String UserPassword);
+    @GET("User_Posts/User_Informations/login.php")
+    Call<User> performUserLogin(@Query("user_name") String UserName,
+                                @Query("user_password") String UserPassword);
 
 
 

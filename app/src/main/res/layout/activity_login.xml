@@ -10,23 +10,26 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textSize="40dp"
+        android:textSize="45dp"
         android:textAlignment="center"
         android:paddingTop="30dp"
         android:textStyle="italic|bold"
         android:text="Login" />
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
+        android:layout_gravity="center"
         android:id="@+id/edt_user_name"
         android:textSize="20dp"
         android:hint="UserName"
         android:gravity="center"
-        android:paddingTop="30dp"
+        android:paddingTop="50dp"
         android:layout_height="wrap_content" />
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
+        android:layout_gravity="center"
+        android:inputType="textPassword"
         android:id="@+id/edt_user_password"
         android:textSize="20dp"
         android:gravity="center"
@@ -41,7 +44,7 @@
         android:textSize="15dp"
         android:text="Login"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:textStyle="bold"
         android:layout_height="wrap_content" />
 

@@ -34,8 +34,8 @@ public class SendPostActivity extends AppCompatActivity {
     private Bitmap bitmap;
     private static final int IMG_REQUEST = 777;
     private MyGalleryAPI mService;
-    private String id,daste,user_id;
-    public String user_idd;
+    private String id, daste;
+    private Integer user_id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +44,12 @@ public class SendPostActivity extends AppCompatActivity {
         id = intent.getStringExtra("id");
         daste = intent.getStringExtra("daste");
         getControls();
+
+
+        LoginActivity loginActivity = new LoginActivity();
+        user_id = loginActivity.UserId;
+        Log.d("user_idd", String.valueOf(user_id));
+
 
         //View bottomSheet = findViewById(R.id.framelayout_bottom_sheet);
         final View bottomSheetLayout = getLayoutInflater().inflate(R.layout.activity_alert_dialog_posts, null);
@@ -84,21 +90,17 @@ public class SendPostActivity extends AppCompatActivity {
 
 
     public void sendPosts() {
-        LoginActivity loginActivity = new LoginActivity();
-        String s = loginActivity.UserId.toString();
-        Log.d("retro", "asdasdasd"+s);
+        Log.d("user_idd", String.valueOf(user_id));
 
-        user_idd = LoginActivity.UserId.toString();
         String link = imageToString();
         mService = Common.getAPI();
-        Log.d("retro", String.valueOf(user_idd));
         mService.sendPosts(link,edt_caption.getText().toString(),
-                Integer.valueOf(this.id),daste).enqueue(new Callback<SendPostsModel>() {
+                Integer.valueOf(id),daste).enqueue(new Callback<SendPostsModel>() {
             @Override
             public void onResponse(Call<SendPostsModel> call, Response<SendPostsModel> response) {
                 response.toString();
                 Log.d("retro", "OOOOOOOkkkkk"+response.toString());
-                //Toast.makeText(SendPostActivity.this, "Post Insert Compeleted", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SendPostActivity.this, "Post Insert Compeleted", Toast.LENGTH_SHORT).show();
             }
 
             @Override

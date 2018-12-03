@@ -36,10 +36,8 @@ public class ShowListMainPostsActivity extends AppCompatActivity {
     private MyGalleryAPI mService;
     private List<ReadMainPostsModel> list = new ArrayList<>();
     private MainPostsAdapter adapter;
-    public String user_id;
+    public Integer user_id;
     private Intent intent;
-
-    public static Integer user_idInteger = 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,17 +46,16 @@ public class ShowListMainPostsActivity extends AppCompatActivity {
         getControls();
 
 
-
-
         intent = getIntent();
-        this.user_id = intent.getStringExtra("key");
-        Log.d("user_id",  String.valueOf(this.user_id));
-
+        Bundle b = intent.getBundleExtra("person");
+        user_id = Integer.valueOf(b.getString("user_id"));
+        Log.d("user_id", String.valueOf(user_id));
 
         mService = Common.getAPI();
 
 
         getPosts();
+
     }
 
     private void getControls() {
@@ -94,6 +91,8 @@ public class ShowListMainPostsActivity extends AppCompatActivity {
                             readMainPostsModel.setImg_url(main_posts_models.get(i).getImg_url());
                             readMainPostsModel.setId(main_posts_models.get(i).getId());
                             list.add(readMainPostsModel);
+
+
                         }
                         adapter.notifyDataSetChanged();
                         recycler_main_posts.setAdapter(adapter);
