@@ -35,7 +35,6 @@ public class SendPostActivity extends AppCompatActivity {
     private static final int IMG_REQUEST = 777;
     private MyGalleryAPI mService;
     private String id, daste;
-    private Integer user_id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,10 +44,10 @@ public class SendPostActivity extends AppCompatActivity {
         daste = intent.getStringExtra("daste");
         getControls();
 
-
+/*
         LoginActivity loginActivity = new LoginActivity();
         user_id = loginActivity.UserId;
-        Log.d("user_idd", String.valueOf(user_id));
+        Log.d("user_idd", String.valueOf(user_id));*/
 
 
         //View bottomSheet = findViewById(R.id.framelayout_bottom_sheet);
@@ -90,8 +89,6 @@ public class SendPostActivity extends AppCompatActivity {
 
 
     public void sendPosts() {
-        Log.d("user_idd", String.valueOf(user_id));
-
         String link = imageToString();
         mService = Common.getAPI();
         mService.sendPosts(link,edt_caption.getText().toString(),
@@ -100,12 +97,14 @@ public class SendPostActivity extends AppCompatActivity {
             public void onResponse(Call<SendPostsModel> call, Response<SendPostsModel> response) {
                 response.toString();
                 Log.d("retro", "OOOOOOOkkkkk"+response.toString());
-                Toast.makeText(SendPostActivity.this, "Post Insert Compeleted", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(SendPostActivity.this, "Post Insert Compeleted *_^", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onFailure(Call<SendPostsModel> call, Throwable t) {
                 Log.d("retro", "NOOOOOOTTTTTTT OOOKKKKKK"+t.getMessage().toString());
+                //Toast.makeText(SendPostActivity.this, "Post Insert Failed : ( ", Toast.LENGTH_SHORT).show();
+
             }
         });
     }

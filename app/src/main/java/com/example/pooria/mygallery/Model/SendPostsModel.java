@@ -2,15 +2,7 @@ package com.example.pooria.mygallery.Model;
 
 public class SendPostsModel {
     private String img_url,caption, post_daste;
-    private Integer post_id,id,user_id;
-
-    public Integer getUser_id() {
-        return user_id;
-    }
-
-    public void setUser_id(Integer user_id) {
-        this.user_id = user_id;
-    }
+    private Integer post_id,id;
 
     public Integer getId() {
         return id;
