@@ -20,6 +20,7 @@ import com.example.pooria.mygallery.Model.Main_Posts_Model;
 import com.example.pooria.mygallery.Model.ReadMainPostsModel;
 import com.example.pooria.mygallery.Retrofit.MyGalleryAPI;
 import com.example.pooria.mygallery.Utils.Common;
+import com.orhanobut.hawk.Hawk;
 
 import java.security.PublicKey;
 import java.util.ArrayList;
@@ -53,6 +54,10 @@ public class ShowListMainPostsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_show_list_main_posts);
         getControls();
 
+
+        Integer user_id = Hawk.get("user_id");
+        Log.d("absd", "onCreate: "+user_id);
+
         mtoggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.Open, R.string.Close);
         mDrawerLayout.addDrawerListener(mtoggle);
         mtoggle.syncState();
@@ -60,8 +65,8 @@ public class ShowListMainPostsActivity extends AppCompatActivity {
 
         intent = getIntent();
         Bundle b = intent.getBundleExtra("person");
-        user_id = Integer.valueOf(b.getString("user_id"));
-        Log.d("user_id", String.valueOf(user_id));
+        this.user_id = Integer.valueOf(b.getString("user_id"));
+        Log.d("user_id", String.valueOf(this.user_id));
 
         mService = Common.getAPI();
 

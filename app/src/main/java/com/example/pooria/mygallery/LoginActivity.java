@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.example.pooria.mygallery.Model.User;
 import com.example.pooria.mygallery.Retrofit.MyGalleryAPI;
 import com.example.pooria.mygallery.Utils.Common;
+import com.orhanobut.hawk.Hawk;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -29,6 +30,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         getControls();
+        Hawk.init(this).build();
 
         btn_Login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,6 +58,7 @@ public class LoginActivity extends AppCompatActivity {
                     UserId = response.body().getId();
                     Log.d("tags", String.valueOf(UserId));
                     Toast.makeText(LoginActivity.this, "Login Ook", Toast.LENGTH_SHORT).show();
+                    Hawk.put("user_id", UserId);
                     Intent intent = new Intent(LoginActivity.this, ShowListMainPostsActivity.class);
                     Bundle bundle = new Bundle();
                     bundle.putString("user_id", String.valueOf(UserId));
