@@ -1,10 +1,12 @@
 package com.example.pooria.mygallery;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomSheetDialog;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
@@ -18,6 +20,7 @@ import android.widget.Toast;
 import com.example.pooria.mygallery.Model.SendPostsModel;
 import com.example.pooria.mygallery.Retrofit.MyGalleryAPI;
 import com.example.pooria.mygallery.Utils.Common;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import retrofit2.Call;
@@ -43,19 +46,13 @@ public class SendPostActivity extends AppCompatActivity {
         id = intent.getStringExtra("id");
         daste = intent.getStringExtra("daste");
         getControls();
-
-/*
-        LoginActivity loginActivity = new LoginActivity();
-        user_id = loginActivity.UserId;
-        Log.d("user_idd", String.valueOf(user_id));*/
-
-
         //View bottomSheet = findViewById(R.id.framelayout_bottom_sheet);
         final View bottomSheetLayout = getLayoutInflater().inflate(R.layout.activity_alert_dialog_posts, null);
         (bottomSheetLayout.findViewById(R.id.button_close)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mBottomSheetDialog.dismiss();
+                Toast.makeText(SendPostActivity.this, "Salam : )", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -89,22 +86,23 @@ public class SendPostActivity extends AppCompatActivity {
 
 
     public void sendPosts() {
+        final String user_id = LoginActivity.UserId.toString();
+        Toast.makeText(this, user_id, Toast.LENGTH_SHORT).show();
         String link = imageToString();
         mService = Common.getAPI();
         mService.sendPosts(link,edt_caption.getText().toString(),
-                Integer.valueOf(id),daste).enqueue(new Callback<SendPostsModel>() {
+                Integer.valueOf(id),daste, Integer.valueOf(user_id)).enqueue(new Callback<SendPostsModel>() {
             @Override
             public void onResponse(Call<SendPostsModel> call, Response<SendPostsModel> response) {
                 response.toString();
                 Log.d("retro", "OOOOOOOkkkkk"+response.toString());
-                //Toast.makeText(SendPostActivity.this, "Post Insert Compeleted *_^", Toast.LENGTH_SHORT).show();
+                Log.d("retro", "oo"+user_id);
+
             }
 
             @Override
             public void onFailure(Call<SendPostsModel> call, Throwable t) {
-                Log.d("retro", "NOOOOOOTTTTTTT OOOKKKKKK"+t.getMessage().toString());
-                //Toast.makeText(SendPostActivity.this, "Post Insert Failed : ( ", Toast.LENGTH_SHORT).show();
-
+                Log.d("retro", "OOOOOOOkkkkk"+user_id);
             }
         });
     }

@@ -1,6 +1,11 @@
 package com.example.pooria.mygallery;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -38,12 +43,19 @@ public class ShowListMainPostsActivity extends AppCompatActivity {
     private MainPostsAdapter adapter;
     public Integer user_id;
     private Intent intent;
+    private DrawerLayout mDrawerLayout;
+    private ActionBarDrawerToggle mtoggle;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_list_main_posts);
         getControls();
+
+        mtoggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.Open, R.string.Close);
+        mDrawerLayout.addDrawerListener(mtoggle);
+        mtoggle.syncState();
 
 
         intent = getIntent();
@@ -60,6 +72,7 @@ public class ShowListMainPostsActivity extends AppCompatActivity {
 
     private void getControls() {
         recycler_main_posts = findViewById(R.id.recycler_main_posts);
+        mDrawerLayout = findViewById(R.id.drawer);
     }
 
     private void getPosts() {
@@ -115,12 +128,16 @@ public class ShowListMainPostsActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
+        if (mtoggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+       /* switch (item.getItemId()) {
             case R.id.insert:
                 Intent intent = new Intent(ShowListMainPostsActivity.this, MainSendPostActivity.class);
                 startActivity(intent);
                 return true;
         }
-        return super.onOptionsItemSelected(item);
+        return super.onOptionsItemSelected(item);*/
     }
 }

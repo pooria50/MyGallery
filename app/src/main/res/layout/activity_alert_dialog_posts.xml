@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="wrap_content"
-    android:background="@android:color/darker_gray"
     tools:context=".AlertDialogPostsActivity">
     <TextView
         android:id="@+id/tv_title"
@@ -18,14 +17,14 @@
         android:textColor="@android:color/holo_red_light"
         android:text="نکات ضروری "
         android:textStyle="bold"
-        android:textSize="20dp"
+        android:textSize="24dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_marginTop="5dp"
-        android:textSize="15dp"
+        android:textSize="19dp"
         android:layout_gravity="right"
         android:layout_margin="5dp"
         android:fontFamily="@string/common_google_play_services_updating_text"
@@ -39,7 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_marginTop="5dp"
-        android:textSize="15dp"
+        android:textSize="19dp"
         android:layout_margin="5dp"
         android:layout_gravity="right"
         android:fontFamily="@string/common_google_play_services_updating_text"
@@ -52,7 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_marginTop="5dp"
-        android:textSize="15dp"
+        android:textSize="19dp"
         android:layout_gravity="right"
         android:layout_margin="5dp"
         android:fontFamily="@string/common_google_play_services_updating_text"
@@ -64,7 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_marginTop="5dp"
-        android:textSize="15dp"
+        android:textSize="19dp"
         android:layout_gravity="right"
         android:layout_margin="5dp"
         android:fontFamily="@string/common_google_play_services_updating_text"

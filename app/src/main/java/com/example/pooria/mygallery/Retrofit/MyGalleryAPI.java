@@ -68,7 +68,8 @@ public interface MyGalleryAPI {
     Call<SendPostsModel> sendPosts(@Field("img_url") String img_url,
                                    @Field("caption") String caption,
                                    @Field("post_id") Integer post_id,
-                                   @Field("post_daste") String post_daste);
+                                   @Field("post_daste") String post_daste,
+                                   @Field("user_id")Integer user_id);
 
 
 
