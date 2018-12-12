@@ -136,13 +136,13 @@ public class ShowListMainPostsActivity extends AppCompatActivity {
         if (mtoggle.onOptionsItemSelected(item)) {
             return true;
         }
-        return super.onOptionsItemSelected(item);
-       /* switch (item.getItemId()) {
-            case R.id.insert:
-                Intent intent = new Intent(ShowListMainPostsActivity.this, MainSendPostActivity.class);
-                startActivity(intent);
+        switch (item.getItemId()) {
+            case R.id.db:
+                Toast.makeText(this, "Db", Toast.LENGTH_SHORT).show();
                 return true;
+            case R.id.event:
+                Toast.makeText(this, "Events", Toast.LENGTH_SHORT).show();
         }
-        return super.onOptionsItemSelected(item);*/
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -4,10 +4,18 @@ package com.example.pooria.mygallery.Model;
 public class User {
 
     private Integer id;
-    private String name,user_name,user_email, user_password, response;
+    private String name,user_name,user_email, user_password, response,image_user;
 
     public String getResponse() {
         return response;
+    }
+
+    public String getImage_user() {
+        return image_user;
+    }
+
+    public void setImage_user(String image_user) {
+        this.image_user = image_user;
     }
 
     public void setResponse(String response) {

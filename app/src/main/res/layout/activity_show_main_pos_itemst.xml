@@ -67,9 +67,6 @@
                 android:layout_height="wrap_content" />
 
 
-
-
-
         </LinearLayout>
 
         <LinearLayout
@@ -126,6 +123,7 @@
                 android:id="@+id/txt_price"
                 android:gravity="center"
                 android:layout_marginLeft="10dp"
+                android:text="تومان"
                 android:hint="Price"
                 android:textStyle="bold"
                 android:layout_height="wrap_content" />

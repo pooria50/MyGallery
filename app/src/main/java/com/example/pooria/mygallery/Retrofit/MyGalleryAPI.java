@@ -24,7 +24,8 @@ public interface MyGalleryAPI {
     Call<User> performRegistration(@Field("name") String Name,
                                    @Field("user_name") String UserName,
                                    @Field("user_password") String UserPassword,
-                                   @Field("user_email") String UserEmail);
+                                   @Field("user_email") String UserEmail,
+                                   @Field("image_user") String ImageUser);
 
 
     @GET("User_Posts/User_Informations/login.php")
@@ -75,7 +76,6 @@ public interface MyGalleryAPI {
 
    @GET("User_Posts/ShowListOfPostsByFarhangi.php")
     Single<List<SendPostsModel>> getpostsByFarhangi();
-
 
     @GET("User_Posts/ShowListOfPostsByVarzeshi.php")
     Single<List<SendPostsModel>> getpostsByVarzeshi();

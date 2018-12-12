@@ -172,7 +172,6 @@ public class ShowListPostActivity extends AppCompatActivity {
 
     public void getPostsByVarzeshi() {
         models.clear();
-
         mService.getpostsByVarzeshi().subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(new SingleObserver<List<SendPostsModel>>() {
