@@ -36,6 +36,7 @@
         <activity android:name=".ShowListMainPostsActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".AlertDialogPostsActivity" />
+        <activity android:name=".WinnerPersonActivity"></activity>
     </application>
 
 </manifest>

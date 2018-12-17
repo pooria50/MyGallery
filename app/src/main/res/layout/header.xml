@@ -7,9 +7,9 @@
     android:orientation="vertical"
     android:layout_height="160dp">
     
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="75dp"
-        android:src="@drawable/ax"
+        android:id="@+id/img_user"
         android:layout_height="75dp" />
 
     <TextView
@@ -17,8 +17,8 @@
         android:textStyle="bold"
         android:textSize="17dp"
         android:textColor="@color/colorPrimaryDark"
-        android:text="PooRia"
         android:layout_marginLeft="25dp"
+        android:id="@+id/user_name"
         android:layout_margin="5dp"
         android:layout_height="wrap_content" />
 

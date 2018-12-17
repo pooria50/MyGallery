@@ -6,6 +6,7 @@ import com.example.pooria.mygallery.Model.SendPostsModel;
 import com.example.pooria.mygallery.Model.User;
 import com.example.pooria.mygallery.Model.User_Post_Comments;
 import com.example.pooria.mygallery.Model.User_Post_Likes;
+import com.example.pooria.mygallery.WinnerPersonActivity;
 
 import java.util.List;
 
@@ -45,6 +46,8 @@ public interface MyGalleryAPI {
                                         @Field("daste") String daste,
                                         @Field("hazine") Integer hazine,
                                         @Field("tarikh") String tarikh);
+
+
 
 
 

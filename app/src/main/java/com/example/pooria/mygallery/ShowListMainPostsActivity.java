@@ -1,6 +1,8 @@
 package com.example.pooria.mygallery;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -13,6 +15,9 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.pooria.mygallery.Adapter.MainPostsAdapter;
@@ -26,6 +31,7 @@ import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import io.reactivex.SingleObserver;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
@@ -42,10 +48,11 @@ public class ShowListMainPostsActivity extends AppCompatActivity {
     private MyGalleryAPI mService;
     private List<ReadMainPostsModel> list = new ArrayList<>();
     private MainPostsAdapter adapter;
-    public Integer user_id;
+    public  Integer user_id;
     private Intent intent;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mtoggle;
+    private NavigationView nav;
 
 
     @Override
@@ -54,13 +61,39 @@ public class ShowListMainPostsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_show_list_main_posts);
         getControls();
 
+        String img = Hawk.get("image_user");
+
+        View view = nav.inflateHeaderView(R.layout.header);
+        CircleImageView img_user = view.findViewById(R.id.img_user);
+        TextView user_name = view.findViewById(R.id.user_name);
+        //img_user.setImageResource(Integer.parseInt(img));
+        user_name.setText("test");
+
 
         Integer user_id = Hawk.get("user_id");
+        String image_user = Hawk.get("image_user");
         Log.d("absd", "onCreate: "+user_id);
+        Log.d("absd", "onCreate: "+image_user);
 
         mtoggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.Open, R.string.Close);
         mDrawerLayout.addDrawerListener(mtoggle);
         mtoggle.syncState();
+
+        nav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                int id = menuItem.getItemId();
+                switch (id) {
+                    case R.id.dbbbbbb:
+                        Toast.makeText(ShowListMainPostsActivity.this, "Dashboard", Toast.LENGTH_SHORT).show();
+                        return true;
+                    default:
+                        return true;
+                }
+            }
+
+        });
+
 
 
         intent = getIntent();
@@ -78,6 +111,7 @@ public class ShowListMainPostsActivity extends AppCompatActivity {
     private void getControls() {
         recycler_main_posts = findViewById(R.id.recycler_main_posts);
         mDrawerLayout = findViewById(R.id.drawer);
+        nav = findViewById(R.id.nav);
     }
 
     private void getPosts() {
@@ -124,25 +158,19 @@ public class ShowListMainPostsActivity extends AppCompatActivity {
                 });
     }
 
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
-        getMenuInflater().inflate(R.menu.menu1, menu);
+        getMenuInflater().inflate(R.menu.drawermenu, menu);
         return true;
-    }
+    }*/
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (mtoggle.onOptionsItemSelected(item)) {
             return true;
         }
-        switch (item.getItemId()) {
-            case R.id.db:
-                Toast.makeText(this, "Db", Toast.LENGTH_SHORT).show();
-                return true;
-            case R.id.event:
-                Toast.makeText(this, "Events", Toast.LENGTH_SHORT).show();
-        }
+
         return super.onOptionsItemSelected(item);
     }
 }

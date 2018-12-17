@@ -14,6 +14,7 @@ import com.example.pooria.mygallery.Model.ReadMainPostsModel;
 import com.example.pooria.mygallery.R;
 import com.example.pooria.mygallery.SendPostActivity;
 import com.example.pooria.mygallery.Utils.Common;
+import com.orhanobut.hawk.Hawk;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

@@ -14,7 +14,7 @@
         app:itemIconTint="@color/darkgray"
         android:layout_width="wrap_content"
         app:menu="@menu/drawermenu"
-        app:headerLayout="@layout/header"
+        android:id="@+id/nav"
         android:layout_gravity="start"
         android:layout_height="match_parent">
 

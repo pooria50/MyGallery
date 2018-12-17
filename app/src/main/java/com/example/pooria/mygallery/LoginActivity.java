@@ -25,6 +25,7 @@ public class LoginActivity extends AppCompatActivity {
     private MyGalleryAPI mService;
     private Button btn_Login;
     public static Integer UserId ;
+    public static String Image_User;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,9 +57,12 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<User> call, Response<User> response) {
                 if (response.body().getResponse().equals("ok")) {
                     UserId = response.body().getId();
+                    Image_User = response.body().getImage_user();
                     Log.d("tags", String.valueOf(UserId));
+                    Log.d("tags", response.body().getImage_user());
                     Toast.makeText(LoginActivity.this, "Login Ook", Toast.LENGTH_SHORT).show();
                     Hawk.put("user_id", UserId);
+                    Hawk.put("image_user", Image_User);
                     Intent intent = new Intent(LoginActivity.this, ShowListMainPostsActivity.class);
                     Bundle bundle = new Bundle();
                     bundle.putString("user_id", String.valueOf(UserId));
